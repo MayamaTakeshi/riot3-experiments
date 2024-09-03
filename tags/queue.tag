@@ -1,6 +1,8 @@
 <queue>
   <div>
     <p>Items {items.length}</p>
+    <button onclick={addItem}>Add item</button>
+    <button onclick={removeItem}>Remove item</button>
   </div>
 
   <div class="queue-container">
@@ -17,15 +19,16 @@
 
     this.on('mount', () => {
       setInterval(() => {
-        this.count++;
-        this.addItem({ text: `Item ${this.count}` });
-        console.log(`items: ${JSON.stringify(this.items.map(i => i.text))}`);
+        this.addItem();
         this.removeItem();
         console.log(`items: ${JSON.stringify(this.items.map(i => i.text))}`);
       }, 1000);
     });
 
-    this.addItem = (item) => {
+    this.addItem = () => {
+      this.count++;
+      const item = { text: `Item ${this.count}` };
+      console.log(`items: ${JSON.stringify(this.items.map(i => i.text))}`);
       this.items.push(item);
       this.update();
     };
