@@ -16,29 +16,23 @@
     this.count = this.items.length;
 
     this.on('mount', () => {
-      var toggle = true;
       setInterval(() => {
-        //if(toggle == true) {
-          this.count++;
-          this.addItem({ text: `Item ${this.count}` });
-          console.log(`items: ${JSON.stringify(this.items.map(i => i.text))}`);
-        //} else {
-          this.removeItem();
-          console.log(`items: ${JSON.stringify(this.items.map(i => i.text))}`);
-        //}
-        //toggle = !toggle;
-        this.update(); // Ensure the component is updated after adding/removing items
+        this.count++;
+        this.addItem({ text: `Item ${this.count}` });
+        console.log(`items: ${JSON.stringify(this.items.map(i => i.text))}`);
+        this.removeItem();
+        console.log(`items: ${JSON.stringify(this.items.map(i => i.text))}`);
       }, 1000);
     });
 
     this.addItem = (item) => {
       this.items.push(item);
-      //this.update();
+      this.update();
     };
 
     this.removeItem = () => {
       this.items.shift();
-      //this.update();
+      this.update();
     };
   </script>
 

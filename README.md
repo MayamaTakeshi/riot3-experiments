@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo just preserves some experiments while stying riot3.
+This repo just preserves some experiments while studying riot3.
 
 ## Usage
 
