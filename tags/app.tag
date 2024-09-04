@@ -1,3 +1,3 @@
 <app>
-  <queue></queue>
+  <expand-contract></expand-contract>
 </app>
